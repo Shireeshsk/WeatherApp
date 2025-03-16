@@ -23,6 +23,7 @@ function SearchBox({updateinfo}){
                 weather: jsonres.weather[0].description
             };
             console.log(result)
+            setError(false)
             return result;
         }catch(err){
             setError(true)
@@ -31,7 +32,7 @@ function SearchBox({updateinfo}){
     }
     function handlechange(event){
         setCity(event.target.value)
-        setError
+        setError(false)
     }
 
     async function handlesubmit(event){
@@ -41,6 +42,7 @@ function SearchBox({updateinfo}){
             setCity("")
             let info = await getweatherinfo();
             updateinfo(info);
+            setCity("")
         }catch(err){
             setError(true)
         }
