@@ -51,7 +51,7 @@ function SearchBox({updateinfo}){
                 <TextField id="city" value={city} label="City Name" variant="outlined" onChange={handlechange} required/>
                 <br /><br />
                 <Button onClick={handlesubmit} variant="contained" type='submit' endIcon={<SendIcon />}>Send</Button>
-                {error && <p style={{text:"red"}}>No such place exists</p>}
+                {error && <p style={{color:"red"}}>No such place exists</p>}
             </form>
         </div>
     )
